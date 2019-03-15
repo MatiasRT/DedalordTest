@@ -4,3 +4,11 @@ DedalordTest/Library/
 DedalordTest/Logs/
 
 DedalordTest/Temp/
+
+DedalordTest/\.vs/
+
+DedalordTest/obj/
+
+*.sln
+
+*.csproj
