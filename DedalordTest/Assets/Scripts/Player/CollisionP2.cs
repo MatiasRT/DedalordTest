@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollisionP2 : MonoBehaviour
 {
     [SerializeField] float startX;
-    [SerializeField] float startY; //-4.3
+    [SerializeField] float startY;
     [SerializeField] DetectCollision[] dtScript;
     [SerializeField] TopCollisionController tccScript;
 
