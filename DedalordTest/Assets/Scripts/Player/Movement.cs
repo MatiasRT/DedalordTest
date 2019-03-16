@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] string input;
     [SerializeField] float speed = 0;
+    [SerializeField] WinManager wmScript;
 
     float animMove;
 
@@ -16,6 +17,7 @@ public class Movement : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        wmScript.winGame.AddListener(Stop);
     }
 
     void FixedUpdate()
@@ -28,5 +30,10 @@ public class Movement : MonoBehaviour
         animMove = Input.GetAxis(input) * speed;
 
         anim.SetFloat("move", Mathf.Abs(animMove));
+    }
+
+    void Stop()
+    {
+        speed = 0;
     }
 }
