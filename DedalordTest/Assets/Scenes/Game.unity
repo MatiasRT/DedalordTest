@@ -305,7 +305,7 @@ Transform:
   - {fileID: 1819294933}
   - {fileID: 1301146455}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193930272
 GameObject:
@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 193930275}
   - component: {fileID: 193930274}
   - component: {fileID: 193930273}
+  - component: {fileID: 193930278}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Untagged
@@ -361,7 +362,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193930272}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -373,7 +374,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &193930275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +453,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193930278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193930272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &251159748
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,12 +486,13 @@ GameObject:
   - component: {fileID: 251159751}
   - component: {fileID: 251159750}
   - component: {fileID: 251159749}
+  - component: {fileID: 251159755}
   - component: {fileID: 251159752}
   - component: {fileID: 251159753}
   - component: {fileID: 251159754}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +512,6 @@ MonoBehaviour:
   input: VerticalP1
   speed: 3.5
   startX: -3.49
-  tccScript: {fileID: 1536726330}
 --- !u!212 &251159750
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -544,12 +567,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251159748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.49, y: -4.3, z: -0.017757399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 659021551}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &251159752
 Rigidbody2D:
@@ -617,6 +640,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &251159755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251159748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cadcc5aeab1b64fb7227b4889475fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startX: -3.49
+  startY: -4.3
+  dtScript:
+  - {fileID: 581711017}
+  - {fileID: 1954291097}
+  - {fileID: 968945386}
+  - {fileID: 193930278}
+  - {fileID: 1086368495}
+  - {fileID: 438551968}
+  - {fileID: 257718691}
+  - {fileID: 1128792003}
+  - {fileID: 1819294934}
+  - {fileID: 1301146456}
+  tccScript: {fileID: 1536726330}
 --- !u!1 &257718685
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +679,7 @@ GameObject:
   - component: {fileID: 257718688}
   - component: {fileID: 257718687}
   - component: {fileID: 257718686}
+  - component: {fileID: 257718691}
   m_Layer: 0
   m_Name: Enemy7
   m_TagString: Untagged
@@ -671,7 +721,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257718685}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -683,7 +733,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &257718688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +812,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257718691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257718685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &320455516
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +1008,7 @@ GameObject:
   - component: {fileID: 438551965}
   - component: {fileID: 438551964}
   - component: {fileID: 438551963}
+  - component: {fileID: 438551968}
   m_Layer: 0
   m_Name: Enemy6
   m_TagString: Untagged
@@ -977,7 +1050,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438551962}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -989,7 +1062,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &438551965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1141,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438551968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438551962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &473477676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,12 +1394,13 @@ GameObject:
   - component: {fileID: 561190626}
   - component: {fileID: 561190625}
   - component: {fileID: 561190624}
+  - component: {fileID: 561190629}
   - component: {fileID: 561190623}
   - component: {fileID: 561190627}
   - component: {fileID: 561190628}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1345,7 +1441,6 @@ MonoBehaviour:
   input: VerticalP2
   speed: 3.5
   startX: 3.43
-  tccScript: {fileID: 123503069}
 --- !u!212 &561190625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1401,12 +1496,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561190622}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.43, y: -4.3, z: -0.017757399}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.4300003, y: -4.3, z: -0.0177574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 659021551}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &561190627
 BoxCollider2D:
@@ -1453,6 +1548,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &561190629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561190622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86a78a5b3e09cf46905c1c096403662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startX: 3.43
+  startY: -4.3
+  dtScript:
+  - {fileID: 581711017}
+  - {fileID: 1954291097}
+  - {fileID: 968945386}
+  - {fileID: 193930278}
+  - {fileID: 1086368495}
+  - {fileID: 438551968}
+  - {fileID: 257718691}
+  - {fileID: 1128792003}
+  - {fileID: 1819294934}
+  - {fileID: 1301146456}
+  tccScript: {fileID: 123503069}
 --- !u!1 &563556759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1687,7 @@ GameObject:
   - component: {fileID: 581711014}
   - component: {fileID: 581711013}
   - component: {fileID: 581711012}
+  - component: {fileID: 581711017}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -1607,7 +1729,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581711011}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1619,7 +1741,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &581711014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1698,6 +1820,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581711017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581711011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &650197647
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1923,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659021550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 659021551}
+  m_Layer: 0
+  m_Name: Players
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &659021551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659021550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 251159751}
+  - {fileID: 561190626}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713448068
 GameObject:
@@ -2192,6 +2368,7 @@ GameObject:
   - component: {fileID: 968945383}
   - component: {fileID: 968945382}
   - component: {fileID: 968945381}
+  - component: {fileID: 968945386}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Untagged
@@ -2233,7 +2410,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968945380}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2245,7 +2422,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &968945383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,6 +2501,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968945386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968945380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1030219659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2611,7 @@ GameObject:
   - component: {fileID: 1086368492}
   - component: {fileID: 1086368491}
   - component: {fileID: 1086368490}
+  - component: {fileID: 1086368495}
   m_Layer: 0
   m_Name: Enemy5
   m_TagString: Untagged
@@ -2453,7 +2653,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086368489}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2465,7 +2665,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1086368492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2544,6 +2744,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086368495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086368489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1128791997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2779,7 @@ GameObject:
   - component: {fileID: 1128792000}
   - component: {fileID: 1128791999}
   - component: {fileID: 1128791998}
+  - component: {fileID: 1128792003}
   m_Layer: 0
   m_Name: Enemy8
   m_TagString: Untagged
@@ -2598,7 +2821,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128791997}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2610,7 +2833,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1128792000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,6 +2912,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128792003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128791997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1301146450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2947,7 @@ GameObject:
   - component: {fileID: 1301146453}
   - component: {fileID: 1301146452}
   - component: {fileID: 1301146451}
+  - component: {fileID: 1301146456}
   m_Layer: 0
   m_Name: Enemy10
   m_TagString: Untagged
@@ -2743,7 +2989,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301146450}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2755,7 +3001,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1301146453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2834,6 +3080,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1301146456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301146450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1392512547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,7 +3237,7 @@ Transform:
   - {fileID: 1536726329}
   - {fileID: 123503071}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536726327
 GameObject:
@@ -3181,7 +3449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1701750409
 MonoBehaviour:
@@ -3381,6 +3649,7 @@ GameObject:
   - component: {fileID: 1819294931}
   - component: {fileID: 1819294930}
   - component: {fileID: 1819294929}
+  - component: {fileID: 1819294934}
   m_Layer: 0
   m_Name: Enemy9
   m_TagString: Untagged
@@ -3422,7 +3691,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819294928}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3434,7 +3703,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1819294931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3513,6 +3782,28 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819294934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819294928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1823135466
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,6 +3968,7 @@ GameObject:
   - component: {fileID: 1954291094}
   - component: {fileID: 1954291093}
   - component: {fileID: 1954291092}
+  - component: {fileID: 1954291097}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -3718,7 +4010,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954291091}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3730,7 +4022,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!114 &1954291094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3809,3 +4101,25 @@ Transform:
   m_Father: {fileID: 129327080}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954291097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954291091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5ede813222c8428f41017580e7001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collP1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  collP2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
