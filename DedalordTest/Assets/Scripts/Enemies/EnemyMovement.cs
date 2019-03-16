@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        enemy.velocity = new Vector2(Mathf.Lerp(0, speed, 1f) , 0);
+        enemy.velocity = new Vector2(Mathf.Lerp(0, speed * Time.deltaTime, 1f) , 0);
     }
 
     void ReturnToOGPosition()

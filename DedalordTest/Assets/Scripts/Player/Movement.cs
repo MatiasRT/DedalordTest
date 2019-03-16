@@ -6,10 +6,6 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] string input;
     [SerializeField] float speed = 0;
-    [SerializeField] float startX;
-
-    //[SerializeField] TopCollisionController tccScript;
-    //[SerializeField] DetectCollision[] dtScript;
 
     float animMove;
 
@@ -18,18 +14,13 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        //tccScript.restart.AddListener(ReturnToOGPosition);
-        /*for(int i=0; i < dtScript.Length; i++)
-        {
-            dtScript[i].coll.AddListener(ReturnToOGPosition);
-        }*/
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
-    { 
-        player.velocity = new Vector2(0, Mathf.Lerp(0, Input.GetAxis(input) * speed, 1f));
+    {
+        player.velocity = new Vector2(0, Mathf.Lerp(0, Input.GetAxis(input) * speed * Time.deltaTime, 1f));
     }
 
     void Update()
@@ -38,9 +29,4 @@ public class Movement : MonoBehaviour
 
         anim.SetFloat("move", Mathf.Abs(animMove));
     }
-
-    /*void ReturnToOGPosition()
-    {
-        player.position = new Vector2(startX, -4.3f);
-    }*/
 }
