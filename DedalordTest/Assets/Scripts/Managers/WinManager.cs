@@ -11,7 +11,7 @@ public class WinManager : MonoBehaviour
     [SerializeField] GameObject winP1;
     [SerializeField] GameObject winP2;
 
-    [HideInInspector] public UnityEvent winGame;
+    [HideInInspector] [SerializeField] UnityEvent winGame;
 
     void Update()
     {
@@ -30,7 +30,7 @@ public class WinManager : MonoBehaviour
         }
     }
 
-    void Win()
+    public void Win()
     {
         winGame.Invoke();
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,5 +41,10 @@ public class WinManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Menu");
+    }
+
+    public UnityEvent WinGame
+    {
+        get { return winGame; }
     }
 }

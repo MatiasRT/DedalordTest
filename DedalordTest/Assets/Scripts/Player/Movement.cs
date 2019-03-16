@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     {
         player = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        wmScript.winGame.AddListener(Stop);
+        wmScript.WinGame.AddListener(Stop);
     }
 
     void FixedUpdate()
