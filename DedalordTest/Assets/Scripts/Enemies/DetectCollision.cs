@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class DetectCollision : MonoBehaviour
 { 
-    [HideInInspector] public UnityEvent collP1;
-    [HideInInspector] public UnityEvent collP2;
+    [HideInInspector] [SerializeField] UnityEvent collP1;
+    [HideInInspector] [SerializeField] UnityEvent collP2;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,5 +14,15 @@ public class DetectCollision : MonoBehaviour
             collP1.Invoke();
         if (collision.gameObject.CompareTag("Player2"))
             collP2.Invoke();
+    }
+
+    public UnityEvent CollP1
+    {
+        get { return collP1; }
+    }
+
+    public UnityEvent CollP2
+    {
+        get { return collP2; }
     }
 }

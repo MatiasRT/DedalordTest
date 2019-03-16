@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator GoToMenu()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Menu");
     }
 }

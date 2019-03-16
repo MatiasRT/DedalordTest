@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        sccScript.restartPos.AddListener(ReturnToOGPosition);
+        sccScript.RestartPos.AddListener(ReturnToOGPosition);
         enemy = GetComponent<Rigidbody2D>();
     }
 

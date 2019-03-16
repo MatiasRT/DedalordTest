@@ -14,10 +14,10 @@ public class CollisionP1 : MonoBehaviour
     void Start()
     {
         playerP1 = GetComponent<Rigidbody2D>();
-        tccScript.restart.AddListener(ReturnToP1Position);
+        tccScript.Restart.AddListener(ReturnToP1Position);
         for (int i = 0; i < dtScript.Length; i++)
         {
-            dtScript[i].collP1.AddListener(ReturnToP1Position);
+            dtScript[i].CollP1.AddListener(ReturnToP1Position);
         }
     }
 

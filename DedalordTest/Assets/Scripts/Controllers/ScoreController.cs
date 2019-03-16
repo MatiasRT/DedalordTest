@@ -16,7 +16,7 @@ public class ScoreController : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<Text>();
-        tccScript.addPoints.AddListener(AddScore);    
+        tccScript.AddPoints.AddListener(AddScore);    
     }
 
     void AddScore()

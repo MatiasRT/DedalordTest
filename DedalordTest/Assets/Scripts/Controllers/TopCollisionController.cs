@@ -5,12 +5,22 @@ using UnityEngine.Events;
 
 public class TopCollisionController : MonoBehaviour
 {
-    [HideInInspector] public UnityEvent restart;
-    [HideInInspector] public UnityEvent addPoints;
+    [HideInInspector] [SerializeField] UnityEvent restart;
+    [HideInInspector] [SerializeField] UnityEvent addPoints;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         restart.Invoke();
         addPoints.Invoke();
+    }
+
+    public UnityEvent Restart
+    {
+        get { return restart; }
+    }
+
+    public UnityEvent AddPoints
+    {
+        get { return addPoints; }
     }
 }
