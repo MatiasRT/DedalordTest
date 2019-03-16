@@ -6,6 +6,13 @@ using System.IO;
 
 public class MenuController : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();    
+    }
+
     void Update()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -14,6 +21,7 @@ public class MenuController : MonoBehaviour
 
     public void Play()
     {
+        audioSource.Play();
         StartCoroutine(ChangeScene());
     }
 
@@ -28,7 +36,7 @@ public class MenuController : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Game");
     }
 }

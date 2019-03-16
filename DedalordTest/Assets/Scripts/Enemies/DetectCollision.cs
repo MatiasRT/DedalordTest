@@ -7,6 +7,12 @@ public class DetectCollision : MonoBehaviour
 { 
     [HideInInspector] [SerializeField] UnityEvent collP1;
     [HideInInspector] [SerializeField] UnityEvent collP2;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();    
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +20,8 @@ public class DetectCollision : MonoBehaviour
             collP1.Invoke();
         if (collision.gameObject.CompareTag("Player2"))
             collP2.Invoke();
+        if(!audioSource.isPlaying)
+            audioSource.Play();
     }
 
     public UnityEvent CollP1
