@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] string input;
+    [SerializeField] string input = null;
     [SerializeField] float speed = 0;
-    [SerializeField] WinManager wmScript;
+    [SerializeField] WinManager wmScript = null;
 
     float animMove;
 

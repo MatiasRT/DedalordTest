@@ -7,11 +7,11 @@ using UnityEngine.Events;
 
 public class WinManager : MonoBehaviour
 {
-    [SerializeField] GameObject panel;
-    [SerializeField] GameObject winP1;
-    [SerializeField] GameObject winP2;
+    [SerializeField] GameObject panel = null;
+    [SerializeField] GameObject winP1 = null;
+    [SerializeField] GameObject winP2 = null;
 
-    [HideInInspector] [SerializeField] UnityEvent winGame;
+    [HideInInspector] [SerializeField] UnityEvent winGame = null;
 
     void Update()
     {
@@ -32,7 +32,7 @@ public class WinManager : MonoBehaviour
 
     public void Win()
     {
-        winGame.Invoke();
+        WinGame.Invoke();
         if (Input.GetKeyDown(KeyCode.Space))
             StartCoroutine(ChangeToMenu());
     }

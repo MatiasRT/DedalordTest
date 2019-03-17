@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class TopCollisionController : MonoBehaviour
 {
-    [HideInInspector] [SerializeField] UnityEvent restart;
-    [HideInInspector] [SerializeField] UnityEvent addPoints;
+    [HideInInspector] [SerializeField] UnityEvent restart = null;
+    [HideInInspector] [SerializeField] UnityEvent addPoints = null;
     private AudioSource audioSource;
 
     void Start()
@@ -16,8 +16,8 @@ public class TopCollisionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        restart.Invoke();
-        addPoints.Invoke();
+        Restart.Invoke();
+        AddPoints.Invoke();
         audioSource.Play();
     }
 

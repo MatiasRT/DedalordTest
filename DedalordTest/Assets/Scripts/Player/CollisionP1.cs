@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CollisionP1 : MonoBehaviour
 {
-    [SerializeField] float startX;
-    [SerializeField] float startY;
-    [SerializeField] DetectCollision[] dtScript;
-    [SerializeField] TopCollisionController tccScript;
+    [SerializeField] float startX = 0;
+    [SerializeField] float startY = 0;
+    [SerializeField] DetectCollision[] dtScript = null;
+    [SerializeField] TopCollisionController tccScript = null;
 
     private Rigidbody2D playerP1;
 

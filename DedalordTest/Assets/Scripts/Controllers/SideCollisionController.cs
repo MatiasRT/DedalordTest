@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class SideCollisionController : MonoBehaviour
 {
-    [HideInInspector] [SerializeField] UnityEvent restartPos;
+    [HideInInspector] [SerializeField] UnityEvent restartPos = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        restartPos.Invoke();
+        RestartPos.Invoke();
     }
 
     public UnityEvent RestartPos

@@ -5,26 +5,22 @@ using UnityEngine.Events;
 
 public class PauseController : MonoBehaviour
 {
-    public static bool GameIsPause = false;
-    [HideInInspector] [SerializeField] UnityEvent onPause;
-    [HideInInspector] [SerializeField] UnityEvent onResume;
-    [HideInInspector] [SerializeField] UnityEvent onReturn;
+    [HideInInspector] [SerializeField] UnityEvent onPause = null;
+    [HideInInspector] [SerializeField] UnityEvent onResume = null;
+    [HideInInspector] [SerializeField] UnityEvent onReturn = null;
 
     public void Resume()
     {
-        GameIsPause = false;
         OnResume.Invoke();
     }
 
     public void Pause()
     {
-        GameIsPause = true;
         OnPause.Invoke();
     }
 
     public void LoadMenu()
     {
-        GameIsPause = false;
         OnReturn.Invoke();
     }
 

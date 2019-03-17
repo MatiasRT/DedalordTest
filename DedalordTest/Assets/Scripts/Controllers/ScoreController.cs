@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     [SerializeField] int scoreToAdd = 0;
-    [SerializeField] int player;
+    [SerializeField] int player = 0;
 
-    [SerializeField] TopCollisionController tccScript;
+    [SerializeField] TopCollisionController tccScript = null;
 
     Text scoreText;
     private int score;

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float startX;
-    [SerializeField] float startY;
+    [SerializeField] float speed = 0;
+    [SerializeField] float startX = 0;
+    [SerializeField] float startY = 0;
 
-    [SerializeField] SideCollisionController sccScript;
+    [SerializeField] SideCollisionController sccScript = null;
 
     private Rigidbody2D enemy;
 

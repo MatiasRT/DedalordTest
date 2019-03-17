@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] PauseController pScript;
+    [SerializeField] PauseController pScript = null;
 
-    [SerializeField] GameObject pCanvas;
+    [SerializeField] GameObject pCanvas = null;
 
     void Start()
     {
